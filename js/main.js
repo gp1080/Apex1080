@@ -37,7 +37,10 @@
   });
 
   /* ── Active Nav Link ── */
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  let currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  if (!currentPage || currentPage.toLowerCase() === 'apex1080') {
+    currentPage = 'index.html';
+  }
   document.querySelectorAll('.navbar-links a, .mobile-menu a').forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
@@ -61,31 +64,6 @@
     );
     fadeElements.forEach(el => observer.observe(el));
   }
-
-  /* ── Page Transitions ── */
-  document.querySelectorAll('a[href]').forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href) return;
-
-    const isInternal =
-      !href.startsWith('http') &&
-      !href.startsWith('mailto:') &&
-      !href.startsWith('tel:') &&
-      !href.startsWith('#') &&
-      !href.startsWith('javascript:') &&
-      !link.hasAttribute('target') &&
-      !href.includes('#');
-
-    if (isInternal) {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.body.classList.add('page-exit');
-        setTimeout(() => {
-          window.location.href = href;
-        }, 300);
-      });
-    }
-  });
 
   /* ── Waitlist Form ── */
   const waitlistForm = document.getElementById('waitlist-form');

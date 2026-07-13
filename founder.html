@@ -2,6 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>
+    (function () {
+      var path = window.location.pathname.toLowerCase();
+      var base = path.indexOf('/apex1080') === 0 ? '/Apex1080/' : '/';
+      window.__APEX_BASE__ = base;
+      var el = document.createElement('base');
+      el.href = base;
+      document.head.appendChild(el);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
   <title>Guillermo Peña — Founder of Apex 1080</title>
