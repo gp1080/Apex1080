@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>Motorcycle, Military and Law Enforcement — Apex 1080</title>
+  <meta name="description" content="Project Heimdall serves three markets: motorcycle riders, military dismounted personnel, and law enforcement tactical units. One platform, three applications.">
+  <link rel="canonical" href="https://apex1080.com/markets.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/apex1080-logo.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-logo">
+        <img src="images/apex1080-logo.png" alt="">
+        APEX 1080
+      </a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="markets.html">Markets</a></li>
+        <li><a href="founder.html">Founder</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="menu-overlay"></div>
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="markets.html">Markets</a></li>
+      <li><a href="founder.html">Founder</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero">
+    <div class="container fade-up">
+      <h1>One platform. Three markets.</h1>
+      <p class="hero-sub">The same hardware solving the same problem at three different scales</p>
+    </div>
+  </section>
+
+  <!-- Three Use Videos -->
+  <section>
+    <div class="container fade-up">
+      <div class="use-videos">
+        <div class="use-video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/motorcycle-hud-highway.mp4" type="video/mp4">
+          </video>
+          <div class="video-label">Motorcycle — Highway HUD</div>
+        </div>
+        <div class="use-video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/soldier-wall-night.mp4" type="video/mp4">
+          </video>
+          <div class="video-label">Military — Through-Wall Detection</div>
+        </div>
+        <div class="use-video-card">
+          <video controls preload="metadata" muted>
+            <source src="videos/officer-crowd-night.mp4" type="video/mp4">
+          </video>
+          <div class="video-label">Law Enforcement — Crowd Scanning</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Motorcycle -->
+  <section class="market-section accent-cyan" id="motorcycle">
+    <div class="container fade-up">
+      <p class="section-label">Market One</p>
+      <h2 class="section-headline">For Riders</h2>
+      <p>Every motorcyclist knows the tradeoff: put on a helmet, lose your peripheral vision. You can't see the car in your blind spot. You can't see what's behind you without a painful neck twist. At night, you're guessing. And the statistics are brutal — motorcyclists are 24 times more likely to die per mile traveled than car drivers.</p>
+      <p>Project Heimdall restores what the helmet takes away. Four cameras stitch a seamless 180-degree passthrough view directly to your eyes in under 25 milliseconds — faster than human visual processing. Rear-view picture-in-picture eliminates the need to look over your shoulder. Blind spot alerts catch what mirrors miss. Night vision keeps you riding when the sun goes down. And the entire system — AI, displays, cameras, compute — lives inside a helmet that costs less than a premium exhaust system.</p>
+      <ul class="capabilities-list">
+        <li>180-degree camera passthrough with sub-25ms latency</li>
+        <li>Blind spot detection and rear-view picture-in-picture</li>
+        <li>Full HUD with speed, RPM via Bluetooth OBD-II</li>
+        <li>Neural night vision — hardware IR plus GPU enhancement</li>
+        <li>Automated lens cleaning — no maintenance, no liquid reservoir</li>
+        <li>Navigation overlay with turn-by-turn directions</li>
+      </ul>
+      <div class="price-tag">Target price: $1,200 – $1,500 consumer retail</div>
+      <div style="margin-top: 2rem;">
+        <a href="#waitlist" class="btn btn-primary">Join the rider waitlist</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Military -->
+  <section class="market-section accent-olive" id="military">
+    <div class="container fade-up">
+      <p class="section-label">Market Two</p>
+      <h2 class="section-headline">For Soldiers</h2>
+      <p>Dismounted soldiers operate with a catastrophic situational awareness gap. The F-35 Helmet Mounted Display System solves this — but it costs $400,000 per unit and requires a $100 million aircraft to function. The Army's IVAS program allocated $21.9 billion for 120,000 units at $182,000 each. Every dismounted soldier who isn't in an F-35 cockpit or wearing IVAS is operating blind.</p>
+      <p>Project Heimdall is fully self-contained. No vehicle. No external compute rack. No tether. WiFi CSI through-wall detection identifies humans behind solid walls up to 5 meters. YOLOv8 weapon recognition runs at 15fps on embedded Jetson Orin Nano compute. Night vision, facial recognition watchlists, and graceful degradation on camera failure — all in a helmet that costs less than 1/36th of IVAS per unit.</p>
+      <ul class="capabilities-list">
+        <li>WiFi CSI through-wall human detection — passive, ambient WiFi only</li>
+        <li>YOLOv8 TensorRT weapon recognition at 15fps minimum</li>
+        <li>850nm/940nm IR night vision with neural low-light enhancement</li>
+        <li>Local-only ArcFace facial recognition watchlist (disabled by default)</li>
+        <li>Graceful degradation — system continues operating on camera failure</li>
+        <li>Sub-$5,000 military configuration — no aircraft required</li>
+      </ul>
+      <p><strong>Procurement path:</strong> SBIR Phase I and II, direct procurement, patent licensing to defense contractors.</p>
+      <div style="margin-top: 2rem;">
+        <a href="contact.html" class="btn btn-primary">Discuss military licensing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Law Enforcement -->
+  <section class="market-section accent-law" id="lawenforcement">
+    <div class="container fade-up">
+      <p class="section-label">Market Three</p>
+      <h2 class="section-headline">For Officers</h2>
+      <p>Tactical helmets offer ballistic protection but zero sensory enhancement. Officers entering buildings, scanning crowds, or responding to active threats operate with degraded awareness at exactly the moment they need awareness most. Current tactical gear protects the head but blindfolds the mind.</p>
+      <p>Project Heimdall transforms the tactical helmet from passive protection into active intelligence. Weapon detection flags threats in crowds before officers consciously register them. Through-wall WiFi sensing reveals occupants behind closed doors. Local facial recognition watchlists identify persons of interest without cloud dependency. Department-level procurement requires no federal approval — deploy under $5,000 per unit with recurring software subscription for watchlist management and AI model updates.</p>
+      <div class="market-video">
+        <div class="video-wrapper">
+          <video controls preload="metadata">
+            <source src="videos/Officer_scanning_crowd_weapon_de-_202607121850.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Law Enforcement — Weapon Detection in Crowd</div>
+        </div>
+      </div>
+      <ul class="capabilities-list">
+        <li>Real-time weapon detection via YOLOv8 TensorRT at 15fps</li>
+        <li>Through-wall human sensing via passive WiFi CSI</li>
+        <li>Local watchlist facial recognition — no cloud, no external transmission</li>
+        <li>180-degree camera coverage with sub-25ms passthrough</li>
+        <li>IR night vision for low-light and no-light operations</li>
+        <li>Software subscription for watchlist management and AI model updates</li>
+      </ul>
+      <p><strong>Recurring revenue:</strong> Software subscription model for watchlist management and AI model updates.</p>
+      <div style="margin-top: 2rem;">
+        <a href="contact.html" class="btn btn-primary">Discuss law enforcement partnerships</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist -->
+  <section class="waitlist-section" id="waitlist">
+    <div class="container fade-up">
+      <h2>Be the first to ride with Heimdall</h2>
+      <form class="waitlist-form" id="waitlist-form">
+        <input type="email" placeholder="Enter your email" required aria-label="Email address">
+        <button type="submit" class="btn btn-primary">Join Waitlist</button>
+      </form>
+      <div class="form-success" id="waitlist-success">You're on the list. We'll be in touch when Heimdall is ready to ship.</div>
+      <div class="trust-signals">
+        <span>🔒 No spam</span>
+        <span>📋 Patent Pending No. 64/108,615</span>
+        <span>🏍 Built by a rider</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="images/apex1080-logo.png" alt="">
+          APEX 1080
+        </div>
+        <p class="footer-tagline">The helmet that sees everything</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="markets.html">Markets</a></li>
+          <li><a href="founder.html">Founder</a></li>
+          <li><a href="press.html">Press</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:frequency1080@gmail.com">frequency1080@gmail.com</a></p>
+        <h4 style="margin-top: 1.5rem;">Links</h4>
+        <ul class="footer-links">
+          <li><a href="https://chromewebstore.google.com/search/Deal%20Snatcher" target="_blank" rel="noopener">Deal Snatcher</a></li>
+          <li><a href="https://mrgameplayer.com" target="_blank" rel="noopener">Mr. Game Player</a></li>
+          <li><a href="https://www.indiegogo.com/projects/apex-rider-hud" target="_blank" rel="noopener">Apex Rider HUD</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        © 2026 Apex 1080. All rights reserved. Patent Pending — USPTO Application No. 64/108,615
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
