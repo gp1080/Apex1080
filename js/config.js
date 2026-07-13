@@ -1,0 +1,15 @@
+/* Apex 1080 — Supabase configuration
+ *
+ * SETUP (one time, ~10 minutes):
+ * 1. Create a free account at https://supabase.com
+ * 2. New project → copy Project URL and anon public key (Settings → API)
+ * 3. Paste them below
+ * 4. In Supabase → SQL Editor, run the script in js/supabase-schema.sql
+ * 5. In Supabase → Authentication → Users → Add user (your admin email + password)
+ * 6. Visit https://apex1080.com/admin.html and sign in
+ */
+
+window.APEX_CONFIG = {
+  supabaseUrl: 'YOUR_SUPABASE_PROJECT_URL',
+  supabaseAnonKey: 'YOUR_SUPABASE_ANON_KEY'
+};

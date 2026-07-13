@@ -68,40 +68,80 @@
   /* ── Waitlist Form ── */
   const waitlistForm = document.getElementById('waitlist-form');
   if (waitlistForm) {
-    waitlistForm.addEventListener('submit', (e) => {
+    waitlistForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const email = waitlistForm.querySelector('input[type="email"]');
-      if (!email?.value) return;
+      const emailInput = waitlistForm.querySelector('input[type="email"]');
+      const submitBtn = waitlistForm.querySelector('button[type="submit"]');
+      if (!emailInput?.value) return;
 
-      /* TODO: Insert Mailchimp/ConvertKit endpoint here
-         Example:
-         fetch('https://YOUR-PROVIDER-ENDPOINT', {
-           method: 'POST',
-           headers: { 'Content-Type': 'application/json' },
-           body: JSON.stringify({ email: email.value })
-         });
-      */
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Joining…';
+      }
+
+      if (!window.ApexDB?.isConfigured()) {
+        alert('Waitlist is not connected yet. Email frequency1080@gmail.com to join.');
+        return;
+      }
+
+      const result = await window.ApexDB.addWaitlistEmail(emailInput.value);
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Join Waitlist';
+      }
+
+      if (result && !result.ok) {
+        alert('Could not join waitlist. Please try again or email frequency1080@gmail.com');
+        return;
+      }
 
       waitlistForm.style.display = 'none';
       const success = document.getElementById('waitlist-success');
-      if (success) success.classList.add('show');
+      if (success) {
+        success.textContent = result?.duplicate
+          ? "You're already on the list. We'll be in touch when Heimdall is ready to ship."
+          : "You're on the list. We'll be in touch when Heimdall is ready to ship.";
+        success.classList.add('show');
+      }
     });
   }
 
   /* ── Contact Form ── */
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
 
-      /* TODO: Connect to Formspree or Netlify Forms for free form handling
-         Example (Formspree):
-         fetch('https://formspree.io/f/YOUR-FORM-ID', {
-           method: 'POST',
-           body: new FormData(contactForm),
-           headers: { 'Accept': 'application/json' }
-         });
-      */
+      const data = {
+        name: contactForm.querySelector('#name')?.value || '',
+        email: contactForm.querySelector('#email')?.value || '',
+        subject: contactForm.querySelector('#subject')?.value || '',
+        message: contactForm.querySelector('#message')?.value || ''
+      };
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      if (!window.ApexDB?.isConfigured()) {
+        alert('Contact form is not connected yet. Email frequency1080@gmail.com directly.');
+        return;
+      }
+
+      const result = await window.ApexDB.addContactSubmission(data);
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+
+      if (result && !result.ok) {
+        alert('Could not send message. Please email frequency1080@gmail.com directly.');
+        return;
+      }
 
       contactForm.style.display = 'none';
       const success = document.getElementById('contact-success');
@@ -137,8 +177,5 @@
 
   handleCarouselResponsive();
   window.addEventListener('resize', handleCarouselResponsive);
-
-  /* ── Analytics placeholder ── */
-  /* TODO: Insert Google Analytics or Plausible tracking code here */
 
 })();
