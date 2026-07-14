@@ -10,6 +10,6 @@
  */
 
 window.APEX_CONFIG = {
-  supabaseUrl: 'YOUR_SUPABASE_PROJECT_URL',
-  supabaseAnonKey: 'YOUR_SUPABASE_ANON_KEY'
+  supabaseUrl: 'https://fheuurxnujmuefwzgdua.supabase.co',
+  supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZoZXV1cnhudWptdWVmd3pnZHVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQwMTMzMzIsImV4cCI6MjA5OTU4OTMzMn0.RbP1KcAs4d4qTdsTsDYj11kYH4oRKCgzukjCOPqiC8o'
 };
