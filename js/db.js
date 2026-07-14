@@ -10,8 +10,9 @@ window.ApexDB = (function () {
     return cfg &&
       cfg.supabaseUrl &&
       cfg.supabaseAnonKey &&
-      !cfg.supabaseUrl.includes('YOUR_SUPABASE') &&
-      !cfg.supabaseAnonKey.includes('YOUR_SUPABASE');
+      cfg.supabaseUrl.startsWith('https://') &&
+      cfg.supabaseUrl.includes('.supabase.co') &&
+      cfg.supabaseAnonKey.startsWith('eyJ');
   }
 
   function getClient() {

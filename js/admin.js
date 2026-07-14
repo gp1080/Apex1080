@@ -146,10 +146,19 @@
   }
 
   /* ── Init ── */
-  if (!window.ApexDB?.isConfigured()) {
-    if (configWarning) configWarning.hidden = false;
+  function initAdmin() {
+    if (!window.ApexDB?.isConfigured()) {
+      if (configWarning) configWarning.hidden = false;
+    } else {
+      if (configWarning) configWarning.hidden = true;
+      checkSession();
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAdmin);
   } else {
-    checkSession();
+    initAdmin();
   }
 
   loginForm?.addEventListener('submit', async (e) => {
