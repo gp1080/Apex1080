@@ -80,7 +80,7 @@
       }
 
       if (!window.ApexDB?.isConfigured()) {
-        alert('Waitlist is not connected yet. Email frequency1080@gmail.com to join.');
+        alert('Waitlist is not connected yet. Email ceo@apex1080.com to join.');
         return;
       }
 
@@ -92,7 +92,7 @@
       }
 
       if (result && !result.ok) {
-        alert('Could not join waitlist. Please try again or email frequency1080@gmail.com');
+        alert('Could not join waitlist. Please try again or email ceo@apex1080.com');
         return;
       }
 
@@ -127,7 +127,7 @@
       }
 
       if (!window.ApexDB?.isConfigured()) {
-        alert('Contact form is not connected yet. Email frequency1080@gmail.com directly.');
+        alert('Contact form is not connected yet. Email ceo@apex1080.com directly.');
         return;
       }
 
@@ -139,7 +139,7 @@
       }
 
       if (result && !result.ok) {
-        alert('Could not send message. Please email frequency1080@gmail.com directly.');
+        alert('Could not send message. Please email ceo@apex1080.com directly.');
         return;
       }
 
